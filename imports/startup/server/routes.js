@@ -1,18 +1,17 @@
 import { Meteor } from 'meteor/meteor';
-import { Accounts } from 'meteor/accounts-base';
+// import { ApiPassword } from 'meteor/miktam:api-password'
 
-// Router.route('/api/v1/login', {where: 'server'})
-//   .post(function () {
-//     var request = this.request;
+Router.route('/api/v1/login', {where: 'server'})
+  .post(function () {
+    var request = this.request;
 
-//     Meteor.loginWithPassword(request.email, request.password,
-//     (err) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         this.response.setHeader('Content-Type', 'application/json');
-//         this.response.end(JSON.stringify(response));
-//       }
-//     });
-
-//   });
+    var response = this.response;
+    var ok = false;
+    if (ApiPassword.validate({email: request.body.email, password: request.body.password})) {
+      ok = true;
+    } else {
+      ok = false;
+    }
+    this.response.setHeader('Content-Type', 'application/json');
+    this.response.end(JSON.stringify(ok));
+  });

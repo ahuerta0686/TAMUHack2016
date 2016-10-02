@@ -1,0 +1,78 @@
+<template name="trip_create">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Create Trip</h2>
+
+      <form id="trip-form">
+        <h4>Trip Information</h4>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Trip Name">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Departure Date">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Registration Deadline">
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox"> Round-Trip?</label>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Return Date">
+        </div>
+
+        <h4>Your Information</h4>
+
+        <p>Will you be a driver or passenger?</p>
+        <div class="radio">
+          <label><input type="radio" name="passengerType" value="driver"> Driver</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="passengerType" value="passenger" checked> Passenger</label>
+        </div>
+
+        <p>How many free seats do you have available?</p>
+        <div class="form-group">
+          <input type="text" class="form-control">
+        </div>
+
+        <p>Do you have lodging plans already?</p>
+        <div class="radio">
+          <label><input type="radio" name="lodgingPlans" value="true"> Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="lodgingPlans" value="false" checked> No</label>
+        </div>
+
+        <p>Please put the address of where you plan to stay. (If you are not a driver your lodging must be approved by your driver)</p>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Address Line 1">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Address Line 2 (optional)">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="City">
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="State">
+            </div>
+          </div>
+          <div class="col-xs-8">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Zip Code">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group btn-group btn-group-justified">
+          <div class="btn-group">
+            <button class="btn btn-lg btn-primary">Create Trip</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>

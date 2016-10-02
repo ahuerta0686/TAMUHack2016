@@ -4,6 +4,7 @@ import { Template } from 'meteor/templating';
 import './app-body.html';
 
 import '../../pages/home/home';
+import '../../pages/trip-create/trip-create';
 import '../../pages/trip-details/trip-details';
 import '../../pages/trip-join/trip-join';
 

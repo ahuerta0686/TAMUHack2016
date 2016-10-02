@@ -29,6 +29,16 @@ Router.route('/home', function () {
   });
 });
 
+Router.route('/trip/new', function () {
+  this.render('app_body', {
+    data: {
+      page: 'trip_create',
+    },
+  });
+}, {
+  name: 'trip.create',
+});
+
 Router.route('/trip-details/:_id', function () {
   this.render('app_body', {
     name: 'trip.details',

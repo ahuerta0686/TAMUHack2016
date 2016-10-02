@@ -1,5 +1,5 @@
 <template name="app_body">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" style="background: hsl(220, 25%, 25%);">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -9,12 +9,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor route='home'}}">Convoyance</a>
+        <a class="navbar-brand" href="{{pathFor route='home'}}" style="color: hsl(220, 25%, 90%); font-style: italic; font-weight: bold; font-variant: small-caps;">Convoyance</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" style="color: white;">
           {{#if currentUser}}
             <li><a href="#">Welcome, {{userEmail}}</a></li>
             <li><a href="#" id="logout-btn">Logout</a></li>

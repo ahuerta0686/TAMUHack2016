@@ -10,6 +10,13 @@
           <button class="btn btn-lg btn-primary">Create a Trip</button>
         </div>
       </div>
+      {{#if currentUser}}
+      <div class="list-group">
+        {{#each trips}}
+        <div class="list-group-item">{{title}}</div>
+        {{/each}}
+      </div>
+      {{else}}
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group btn-group btn-group-justified">
@@ -26,6 +33,7 @@
           </div>
         </div>
       </div>
+      {{/if}}
     </div>
   </div>
 </template>

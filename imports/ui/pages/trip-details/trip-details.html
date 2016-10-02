@@ -4,14 +4,18 @@
       <h3>{{title}} (ID: {{_id}})</h3>
       <div class="form-group btn-group btn-group-justified">
         <div class="btn-group">
-          <button class="btn btn-lg btn-primary">Join Trip</button>
+          {{#if joined}}
+          <a class="btn btn-lg btn-primary disabled">You're In</a>
+          {{else}}
+          <a href="{{pathFor route='trip.join' data=getPost}}" class="btn btn-lg btn-primary">Join Trip</a>
+          {{/if}}
         </div>
       </div>
       <p><strong>Status:</strong> {{stage}}</p>
       <p><strong># of Participants:</strong> {{participants.length}}</p>
       <p><strong>Round-Trip:</strong> {{#if roundTrip}}Yes{{else}}No{{/if}}</p>
       <p><strong>Departure Date:</strong> {{departureDate}}</p>
-      <p><strong>Deadline to Join:</strong> {{joinDeadline}}</p>
+      <p><strong>Deadline to Join:</strong> {{registrationDeadline}}</p>
 
     </div>
   </div>

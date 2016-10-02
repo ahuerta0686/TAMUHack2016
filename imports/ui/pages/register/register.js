@@ -8,6 +8,8 @@ Template.register.events({
     event.preventDefault();
 
     const target = event.target;
+    const firstName = target.firstName.value;
+    const lastName = target.lastName.value;
     const email = target.email.value;
     const password = target.password.value;
     const passwordConfirm = target.passwordConfirm.value ;
@@ -16,6 +18,7 @@ Template.register.events({
       Accounts.createUser({
         email,
         password,
+        profile: {firstName, lastName},
       },
       (err) => {
         if (typeof err != 'undefined') {

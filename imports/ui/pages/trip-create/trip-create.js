@@ -46,7 +46,8 @@ Template.trip_create.events({
           departureDate = target.departureDate.value,
           registrationDeadline = target.registrationDeadline.value,
           roundTrip = target.roundTrip.checked,
-          returnDate = roundTrip ? target.returnDate.value : undefined;
+          returnDate = roundTrip ? target.returnDate.value : undefined
+          status = 'Planning';
 
     const userId = Meteor.userId(),
           leader = true,
@@ -80,15 +81,16 @@ Template.trip_create.events({
       registrationDeadline,
       roundTrip,
       returnDate,
+      status,
       participants: [leaderObj],
       createdAt: new Date(),
       updatedAt: new Date(),
     };
 
-    Trips.insert(tripObj);
+    var tripId = Trips.insert(tripObj);
 
-    // Router.go('trip.details', {_id: this._id});
-    Router.go('home');
+    Router.go('trip.details', {_id: tripId});
+    // Router.go('home');
 
     return false;
   },
